@@ -1,0 +1,10 @@
+Commission:
+  stage: build
+  rules:
+    - when: manual
+  script:
+    - ssh root@$MAAS-Server "bash commission.sh"
+Deploy-machines:
+  stage: deploy
+  script:
+    - ssh root@$MAAS-Server "bash deploy-partition.sh"
