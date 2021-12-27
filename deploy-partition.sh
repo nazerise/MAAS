@@ -23,7 +23,7 @@ partition_values () {
 }
 
 config_raids () {
-		echo -e "\033[0;31mConfig raids ...\033[0m"
+	echo -e "\033[0;31mConfig raids ...\033[0m"
         devices_ids $line_system_ids
         while
                 read line_devices
@@ -31,7 +31,7 @@ config_raids () {
                 list_devices_id+=("block_devices=$line_devices")
         done <<<"$id_devices_1"
         maas admin  raids create $line_system_ids name=$raid_name level=$raid_level ${list_devices_id[@]} > /dev/null 2>&1
-		devices_ids $line_system_ids
+	devices_ids $line_system_ids
 }
 config_boot_partition () {
 	echo -e "\033[0;31mConfig boot parition ...\033[0m"
