@@ -7,4 +7,4 @@ Commission:
 Deploy-machines:
   stage: deploy
   script:
-    - ssh root@$MAAS-Server "bash deploy-partition.sh"
+    - ssh root@$MAAS-Server "bash network-bond.sh ; bash deploy-partition.sh"
